@@ -15,6 +15,8 @@ function incr1(){
        }
 }
 
+
+
 function incr2(){
     if(count2<max&&count1!=max)
        {
@@ -25,8 +27,13 @@ function incr2(){
        }
 }
 
+
+
 document.querySelector("#b1").addEventListener("click",incr1)
 document.querySelector("#b2").addEventListener("click",incr2)
+
+
+
 document.querySelector("#res").addEventListener("click",function(){
     document.querySelector("#p1").innerHTML=0;
     count1=0;
@@ -40,9 +47,19 @@ document.querySelector("#res").addEventListener("click",function(){
 
 
 
-function reset(){
+  num.addEventListener("change",function()
+{
+   document.querySelector("#to").textContent=Number(num.value);
+   max = Number(num.value);
+   reset();
 
-   
+})
+
+
+
+
+function reset(){
+  
         document.querySelector("#p1").innerHTML=0;
         count1=0;
         document.querySelector("#p1").classList.remove("winner");
@@ -55,12 +72,5 @@ function reset(){
 
 
 
+  
 
-
-    num.addEventListener("change",function()
-{
-   document.querySelector("#to").textContent=Number(num.value);
-   max = Number(num.value);
-   reset();
-
-})
